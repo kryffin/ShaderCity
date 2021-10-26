@@ -146,8 +146,8 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="basic.frag.glsl" />
-    <None Include="basic.vert.glsl" />
+    <None Include="basic_frag.glsl" />
+    <None Include="basic_vert.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

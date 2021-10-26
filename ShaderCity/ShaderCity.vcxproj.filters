@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="basic.frag.glsl">
+    <None Include="basic_frag.glsl">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="basic.vert.glsl">
+    <None Include="basic_vert.glsl">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
