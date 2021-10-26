@@ -1,5 +1,3 @@
-#define GLFW_INCLUDE_NONE
-
 #include <iostream>
 #include <stdlib.h>
 #include <GLFW/glfw3.h>
@@ -13,6 +11,10 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GLFW_TRUE);
+}
+
+void render(GLFWwindow* window) {
+	//do things
 }
 
 int main() {
@@ -36,9 +38,17 @@ int main() {
 
 	glfwMakeContextCurrent(window); //making the window the current context (focus?)
 
+	int width, height;
+	glfwGetFramebufferSize(window, &width, &height);
+	std::cout << "Width : " << width << " | Height : " << height << std::endl;
+
+	//GLFW contains 2 buffers : a front and a back one. the front is being displayed while the back is being written to
+	glfwSwapInterval(1); //goas against screen tearing (vsync)
+
 	while (!glfwWindowShouldClose(window)) {
 		//keeps the window running
-		glfwPollEvents();
+		render(window);
+		glfwPollEvents(); //processes events
 	}
 
 	glfwDestroyWindow(window); //destroys a window
